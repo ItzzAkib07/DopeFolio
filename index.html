@@ -321,7 +321,7 @@
 
             </div>
 
-            <form id="contact-form" name="Form" data-aos="fade-left" onsubmit="validate(event)">
+            <form id="contact-form" name="Form" data-aos="fade-left">
                 <input type="text" placeholder="name" class="box" name="name" id="name" >
                 <input type="email" placeholder="email" class="box" name="email" id="email" >
                 <input type="text" placeholder="project" class="box" name="project" id="project" >
@@ -353,8 +353,73 @@
     <!-- Toastify  -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-    <!-- SMTP CDN Link -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+<!-- EmailJS CDN Link -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Initializing the EmailJS -->
+    <script type="text/javascript">
+        (function () {
+            emailjs.init('tiozmsqpHyfvx7sdX');
+        })();
+    </script>
+
+    <!-- Function to send mail -->
+    <script>
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                // Get the form input values
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var project = document.getElementById('project').value;
+                var message = document.getElementById('message').value;
+
+                // Validate the form inputs
+                if (name === '' || email === '' || project === '' || message === '') {
+                    showToast("Please fill in all the fields.");
+                } else {
+                    // All fields are filled, proceed with sending the email
+                    emailjs.sendForm('service_1hpvog4', 'template_dxocas7', this)
+                        .then(function () {
+                            showToast("Thank you for connecting. \n I will get back to you shortly...");
+                            resetForm();
+                            scrollToTop();
+                        }, function (error) {
+                            showToast("Failed to send email. Please try again.");
+                        });
+                }
+            });
+        };
+
+
+        // Function to reset the form
+        function resetForm() {
+            document.getElementById('contact-form').reset();
+        }
+
+        // Function to scroll to the top of the page
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+
+
+        function showToast(message) {
+            // Display toast message using a library like Toastify
+            Toastify({
+                text: message,
+                duration: 3000,
+                close: true,
+                stopOnFocus: true,
+                gravity: "top", // Display at the top of the page
+                position: "right", // Center horizontally
+                backgroundColor: "linear-gradient(to right, #ff5f6d, #ffc371)", // Custom background color
+                style: {
+                    width: "30rem",
+                },
+            }).showToast();
+        }
+    </script>
 
 </body>
 
