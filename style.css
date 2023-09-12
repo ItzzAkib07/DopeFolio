@@ -339,56 +339,44 @@ header .navbar ul li a:hover{
    background: var(--yellow);
 }
 
-.python{
-    width: 70%;
-    animation: python 2s;
-}
-.java{
-    width: 70%;
-    animation: java 2s;
-}
 .html{
     width: 90%;
     animation: html 2s;
 }
 .css{
-    width: 80%;
+    width: 90%;
     animation: css 2s;    
 }
 .js{
-    width: 60%;
+    width: 80%;
     animation: js 2s;
 }
-.md{
-    width: 70%;
-    animation: md 2s;
+.react{
+    width: 85%;
+    animation: react 2s;
+}
+.ui{
+    width: 80%;
+    animation: ui 2s;
 }
 .node{
     width: 60%;
     animation: node 2s;
 }
+.java{
+    width: 60%;
+    animation: java 2s;
+}
+.md{
+    width: 50%;
+    animation: md 2s;
+}
 .sql{
-    width: 70%;
+    width: 50%;
     animation: sql 2s;
 }
 
 
-@keyframes python {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 70%;
-    } 
-}
-@keyframes java {
-    0%{
-        width: 0%;
-    }
-    100%{
-        width: 70%;
-    } 
-}
 @keyframes html {
     0%{
         width: 0%;
@@ -397,8 +385,15 @@ header .navbar ul li a:hover{
         width: 90%;
     }
 }
-
 @keyframes css {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    } 
+}
+@keyframes js {
     0%{
         width: 0%;
     }
@@ -406,25 +401,22 @@ header .navbar ul li a:hover{
         width: 80%;
     } 
 }
-
-@keyframes js {
+@keyframes react {
     0%{
         width: 0%;
     }
     100%{
-        width: 60%;
+        width: 85%;
     } 
 }
-
-@keyframes md {
+@keyframes ui {
     0%{
         width: 0%;
     }
     100%{
-        width: 70%;
+        width: 80%;
     } 
 }
-
 @keyframes node {
     0%{
         width: 0%;
@@ -433,13 +425,28 @@ header .navbar ul li a:hover{
         width: 60%;
     } 
 }
-
+@keyframes java {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 60%;
+    } 
+}
+@keyframes md {
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 50%;
+    } 
+}
 @keyframes sql {
     0%{
         width: 0%;
     }
     100%{
-        width: 70%;
+        width: 50%;
     } 
 }
 
