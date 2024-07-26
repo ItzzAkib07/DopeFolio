@@ -312,6 +312,12 @@ header .navbar ul li a:hover{
 
 .about .row .prog .skills{
     padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 5rem;
 }
 
 .about .row .prog li{
@@ -319,6 +325,12 @@ header .navbar ul li a:hover{
     color:#fff;
     margin-top: 2rem;    
     list-style: none;
+    cursor: pointer;
+}
+
+.about .row .prog li img{
+    height: 10rem;
+    width: 10rem;
 }
 
 
@@ -338,6 +350,7 @@ header .navbar ul li a:hover{
    float: left;
    background: var(--yellow);
 }
+
 
 .html{
     width: 90%;
